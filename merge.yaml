@@ -1,145 +1,72 @@
-Clash Verge / Mihomo Merge 配置
-
-仅追加自定义规则
-
-不修改优云666订阅中的节点、代理组、DNS、TUN
+# Clash Verge / Mihomo Merge 配置
+# 仅追加自定义规则
+# 不修改优云666订阅中的节点、代理组、DNS、TUN
 
 prepend-rules:
+  - GEOSITE,category-ads-all,REJECT
 
-=========================
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
 
-广告拦截
+  - GEOSITE,openai,优云666
+  - DOMAIN-SUFFIX,chatgpt.com,优云666
+  - DOMAIN-SUFFIX,openai.com,优云666
+  - DOMAIN-SUFFIX,oaistatic.com,优云666
+  - DOMAIN-SUFFIX,oaiusercontent.com,优云666
 
-=========================
+  - DOMAIN-SUFFIX,anthropic.com,优云666
+  - DOMAIN-SUFFIX,claude.ai,优云666
+  - DOMAIN-SUFFIX,perplexity.ai,优云666
+  - DOMAIN-SUFFIX,x.ai,优云666
+  - DOMAIN-SUFFIX,grok.com,优云666
 
-* GEOSITE,category-ads-all,REJECT
+  - GEOSITE,github,优云666
+  - DOMAIN-SUFFIX,github.com,优云666
+  - DOMAIN-SUFFIX,githubusercontent.com,优云666
+  - DOMAIN-SUFFIX,githubassets.com,优云666
 
-=========================
+  - GEOSITE,google,优云666
+  - GEOSITE,youtube,优云666
+  - DOMAIN,mtalk.google.com,优云666
 
-局域网直连
+  - GEOSITE,netflix,优云666
+  - GEOSITE,spotify,优云666
 
-=========================
+  - GEOSITE,microsoft,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+  - DOMAIN-SUFFIX,office.com,DIRECT
+  - DOMAIN-SUFFIX,office.net,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-SUFFIX,live.com,DIRECT
+  - DOMAIN-SUFFIX,outlook.com,DIRECT
+  - DOMAIN-SUFFIX,windows.com,DIRECT
+  - DOMAIN-SUFFIX,windows.net,DIRECT
+  - DOMAIN-SUFFIX,azure.com,DIRECT
+  - DOMAIN-SUFFIX,azureedge.net,DIRECT
 
-* IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-* IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-* IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-* IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-* IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,copilot.microsoft.com,优云666
+  - DOMAIN-SUFFIX,bingapis.com,优云666
 
-=========================
+  - GEOSITE,apple,DIRECT
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
 
-AI 服务
+  - DOMAIN-SUFFIX,alicdn.com,DIRECT
+  - DOMAIN-SUFFIX,aliyuncs.com,DIRECT
+  - DOMAIN-SUFFIX,bdstatic.com,DIRECT
+  - DOMAIN-SUFFIX,qpic.cn,DIRECT
+  - DOMAIN-SUFFIX,gtimg.com,DIRECT
+  - DOMAIN-SUFFIX,wechat.com,DIRECT
+  - DOMAIN-SUFFIX,byteimg.com,DIRECT
+  - DOMAIN-SUFFIX,bytecdn.cn,DIRECT
 
-=========================
-
-* GEOSITE,openai,优云666
-* DOMAIN-SUFFIX,chatgpt.com,优云666
-* DOMAIN-SUFFIX,openai.com,优云666
-* DOMAIN-SUFFIX,oaistatic.com,优云666
-* DOMAIN-SUFFIX,oaiusercontent.com,优云666
-* DOMAIN-SUFFIX,anthropic.com,优云666
-* DOMAIN-SUFFIX,claude.ai,优云666
-* DOMAIN-SUFFIX,perplexity.ai,优云666
-* DOMAIN-SUFFIX,x.ai,优云666
-* DOMAIN-SUFFIX,grok.com,优云666
-* DOMAIN-SUFFIX,gemini.google.com,优云666
-* DOMAIN-SUFFIX,googleapis.com,优云666
-* DOMAIN-SUFFIX,generativelanguage.googleapis.com,优云666
-
-=========================
-
-GitHub / 开发工具
-
-=========================
-
-* GEOSITE,github,优云666
-* DOMAIN-SUFFIX,github.com,优云666
-* DOMAIN-SUFFIX,githubusercontent.com,优云666
-* DOMAIN-SUFFIX,githubassets.com,优云666
-
-=========================
-
-Google / YouTube
-
-=========================
-
-* GEOSITE,google,优云666
-* GEOSITE,youtube,优云666
-* DOMAIN,mtalk.google.com,优云666
-
-=========================
-
-流媒体
-
-=========================
-
-* GEOSITE,netflix,优云666
-* GEOSITE,spotify,优云666
-
-=========================
-
-Microsoft（直连）
-
-=========================
-
-* GEOSITE,microsoft,DIRECT
-* DOMAIN-SUFFIX,microsoft.com,DIRECT
-* DOMAIN-SUFFIX,microsoftonline.com,DIRECT
-* DOMAIN-SUFFIX,office.com,DIRECT
-* DOMAIN-SUFFIX,office.net,DIRECT
-* DOMAIN-SUFFIX,office365.com,DIRECT
-* DOMAIN-SUFFIX,live.com,DIRECT
-* DOMAIN-SUFFIX,outlook.com,DIRECT
-* DOMAIN-SUFFIX,windows.com,DIRECT
-* DOMAIN-SUFFIX,windows.net,DIRECT
-* DOMAIN-SUFFIX,azure.com,DIRECT
-* DOMAIN-SUFFIX,azureedge.net,DIRECT
-* DOMAIN-SUFFIX,msftconnecttest.com,DIRECT
-* DOMAIN-SUFFIX,msftncsi.com,DIRECT
-
-Copilot 单独代理
-
-* DOMAIN-SUFFIX,copilot.microsoft.com,优云666
-* DOMAIN-SUFFIX,bingapis.com,优云666
-
-=========================
-
-Apple（直连）
-
-=========================
-
-* GEOSITE,apple,DIRECT
-* DOMAIN-SUFFIX,apple.com,DIRECT
-* DOMAIN-SUFFIX,icloud.com,DIRECT
-* DOMAIN-SUFFIX,icloud-content.com,DIRECT
-* DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
-* DOMAIN-SUFFIX,mzstatic.com,DIRECT
-* DOMAIN-SUFFIX,cdn-apple.com,DIRECT
-* DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
-
-=========================
-
-国内 CDN
-
-=========================
-
-* DOMAIN-SUFFIX,alicdn.com,DIRECT
-* DOMAIN-SUFFIX,aliyuncs.com,DIRECT
-* DOMAIN-SUFFIX,bdstatic.com,DIRECT
-* DOMAIN-SUFFIX,bcebos.com,DIRECT
-* DOMAIN-SUFFIX,qpic.cn,DIRECT
-* DOMAIN-SUFFIX,gtimg.com,DIRECT
-* DOMAIN-SUFFIX,wechat.com,DIRECT
-* DOMAIN-SUFFIX,byteimg.com,DIRECT
-* DOMAIN-SUFFIX,bytecdn.cn,DIRECT
-* DOMAIN-SUFFIX,volccdn.com,DIRECT
-* DOMAIN-SUFFIX,volces.com,DIRECT
-
-=========================
-
-国内直连兜底
-
-=========================
-
-* GEOSITE,cn,DIRECT
-* GEOIP,CN,DIRECT,no-resolve
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
